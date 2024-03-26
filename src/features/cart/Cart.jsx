@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LinkButton from '../../ui/LinkButton';
 
 Cart.propTypes = {
     
@@ -7,9 +8,9 @@ Cart.propTypes = {
 
 function Cart(props) {
     return (
-        <div>
-            
-        </div>
+        <LinkButton to="/menu">
+            &larr; Back to menu
+        </LinkButton>
     );
 }
 
