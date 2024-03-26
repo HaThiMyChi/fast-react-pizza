@@ -12,7 +12,6 @@ Menu.propTypes = {
 
 function Menu(props) {
     const menu = useLoaderData();
-    console.log('menu', menu)
 
     return (
         <ul>
