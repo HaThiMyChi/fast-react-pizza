@@ -11,7 +11,6 @@ AppLayout.propTypes = {
 
 function AppLayout(props) {
     const navigation = useNavigation();
-    console.log('nav', navigation)
 
     const isLoading = navigation.state === "loading";
 
