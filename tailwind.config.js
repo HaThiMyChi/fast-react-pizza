@@ -4,7 +4,18 @@ module.exports = {
         "./src/**/*.{html,js,jsx,ts,tsx}",
     ],
     theme: {
-        extend: {},
+        fontFamily: {
+            sans: 'Roboto Mono, monospace',
+        },
+
+        extend: {
+            fontSize: {
+                huge: ['80rem', { lineHeight: '1' }],
+            },
+            height: {
+                screen: '100dvh',
+            },
+        },
     },
     plugins: [],
 }

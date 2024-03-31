@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { formatCurrency } from '../../utils/helpers';
+import Button from '../../ui/Button';
 
 MenuItem.propTypes = {
     pizza: PropTypes.object,
@@ -17,7 +18,9 @@ function MenuItem({pizza}) {
                 <p className='font-medium'>{name}</p>
                 <p className='text-sm capitalize italic text-stone-500'>{ingredients.join(',')}</p>
                 <div className='mt-auto flex items-center justify-between'>
-                    {!soldOut ? <p className='text-sm'>{formatCurrency(unitPrice)}</p> : <p className='text-sm font-medium uppercase text-stone-500'>Sold out</p>}
+                    {!soldOut ? (<p className='text-sm'>{formatCurrency(unitPrice)}</p> ): (<p className='text-sm font-medium uppercase text-stone-500'>Sold out</p>)}
+
+                    <Button type="small">Add to cart</Button>
                 </div>
             </div>
 
