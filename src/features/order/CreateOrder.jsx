@@ -68,12 +68,12 @@ function CreateOrder(props) {
                     <div className="grow">
                         <input type="tel" name="phone" required 
                              className='input w-full'/>
+                        {formErrors?.phone && (
+                            <p className='text-xs mt-2 text-red-700 bg-red-100 rounded-md p-2'>
+                                {formErrors.phone}
+                            </p>
+                        )}
                     </div>
-                    {formErrors?.phone && (
-                        <p>
-                            {formErrors.phone}
-                        </p>
-                    )}
                 </div>
 
                 <div className='relative mb-5 flex flex-col gap-2
