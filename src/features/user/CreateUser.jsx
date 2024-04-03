@@ -7,9 +7,11 @@ CreateUser.propTypes = {
 
 function CreateUser(props) {
     const [username, setUsername] = useState('');
-
+    
     function handleSubmit(e) {
         e.preventDefault();
+
+        if (!username) return;
     }
 
     return (
@@ -21,7 +23,7 @@ function CreateUser(props) {
                 placeholder="Your full name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className='w-72'
+                className='input mb-8 w-72'
             />
             
             {username !== '' && (
