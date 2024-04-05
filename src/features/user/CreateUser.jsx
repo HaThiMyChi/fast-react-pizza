@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Button from '../../ui/Button';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { updateName } from './userSlice';
+import { useNavigate } from 'react-router-dom';
 
 CreateUser.propTypes = {
     
@@ -7,11 +11,15 @@ CreateUser.propTypes = {
 
 function CreateUser(props) {
     const [username, setUsername] = useState('');
+    const dispatch  = useDispatch();
+    const navigate = useNavigate();
     
     function handleSubmit(e) {
         e.preventDefault();
 
         if (!username) return;
+        dispatch(updateName(username));
+        navigate('/menu')
     }
 
     return (
@@ -28,7 +36,7 @@ function CreateUser(props) {
             
             {username !== '' && (
                 <div>
-                    <button>Start ordering</button>
+                    <Button type="primary">Start ordering</Button>
                 </div>
             )}
             

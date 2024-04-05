@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 
 import { createOrder } from '../../services/apiRestaurant';
+import { useSelector } from 'react-redux';
 
 CreateOrder.propTypes = {
     
@@ -41,6 +42,7 @@ const fakeCart = [
 
 function CreateOrder(props) {
     const cart = fakeCart;
+    const username = useSelector((state) => state.user.username);
 
     const navigation = useNavigation();
     console.log('navvvv', navigation)
@@ -57,7 +59,7 @@ function CreateOrder(props) {
                     <label className='sm:basis-40'>First Name</label>
                     <div className='grow'>
 
-                        <input type="text" name="customer" required  className='input w-full' />
+                        <input type="text" name="customer" required  className='input w-full' defaultValue={username} />
                     </div>
                         
                 </div>
